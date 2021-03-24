@@ -6,7 +6,7 @@ using System.IO.Abstractions;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace AsyncWaitDemo
+namespace Compression
 {
 
 #if SYNC
