@@ -7,18 +7,18 @@ namespace AsyncWaitDemoTests
 {
     public class CompressionCommandTests
     {
-        MockFileSystem fileSystem;
+        readonly MockFileSystem _fileSystem;
 
         public CompressionCommandTests()
         {
-            fileSystem = new MockFileSystem();
-            fileSystem.AddFile(@"source.txt", MockFileData.NullObject);
+            _fileSystem = new MockFileSystem();
+            _fileSystem.AddFile(@"source.txt", MockFileData.NullObject);
         }
 
         [Fact]
         public void When_compressing_a_file_it_should_not_throw()
         {
-            var sut = new CompressionCommandHandler(fileSystem);
+            var sut = new CompressionCommandHandler(_fileSystem);
 
             sut.Handle(new CompressCommand
             {
@@ -30,7 +30,7 @@ namespace AsyncWaitDemoTests
         [Fact]
         public void When_file_is_missing_it_should_throw()
         {
-            var sut = new CompressionCommandHandler(fileSystem);
+            var sut = new CompressionCommandHandler(_fileSystem);
 
             Assert.Throws<FileNotFoundException>(() =>
             {
