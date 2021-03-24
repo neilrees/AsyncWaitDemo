@@ -12,7 +12,7 @@ namespace AsyncWaitDemo
 
     public static class CompressionExtensions
     {
-        public static void Compress(this CompressionLibary compressionLibary, string sourceFilePath, string targetFilePath)
+        public static void Compress(this CompressionLibrary compressionLibary, string sourceFilePath, string targetFilePath)
         {
             compressionLibary.CompressAsync(sourceFilePath, targetFilePath).Await();
         }
