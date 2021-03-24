@@ -19,6 +19,14 @@ namespace AsyncWaitDemo
             }
         }
 
+        //public async Task UsingAsyncLock()
+        //{
+        //    lock (Sync)
+        //    {
+        //        await Task.Delay(1);
+        //    }
+        //}
+
         public async Task UsingMonitors()
         {
             Monitor.Enter(Sync);
